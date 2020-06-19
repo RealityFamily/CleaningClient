@@ -1,0 +1,114 @@
+﻿<Page x:Class="WpfApp1.Pages.ChangeClient"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddClient">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="25"
+                   FontWeight="Bold"
+                   Text="Изменение данных о клиенте"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+
+        <Grid Grid.Row="1"
+              HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition MinWidth="250"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Column="0"
+                       Grid.Row="0"
+                       Text="Фамилия:"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin="15"/>
+            <TextBox x:Name="LastField"
+                     Grid.Column="1"
+                     Grid.Row="0"
+                     VerticalAlignment="Center"
+                     FontSize="20"
+                     TextWrapping="WrapWithOverflow"
+                     Margin="15"/>
+            <TextBlock Grid.Column="0"
+                       Grid.Row="1"
+                       Text="Имя:"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin="15"/>
+            <TextBox x:Name="NameField"
+                     Grid.Column="1"
+                     Grid.Row="1"
+                     VerticalAlignment="Center"
+                     FontSize="20"
+                     TextWrapping="WrapWithOverflow"
+                     Margin="15"/>
+            <TextBlock Grid.Column="0"
+                       Grid.Row="2"
+                       Text="Телефон:"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin="15"/>
+            <TextBox x:Name="PhoneField"
+                     Grid.Column="1"
+                     Grid.Row="2"
+                     VerticalAlignment="Center"
+                     FontSize="20"
+                     TextWrapping="WrapWithOverflow"
+                     Margin="15"/>
+            <TextBlock Grid.Column="0"
+                       Grid.Row="3"
+                       Text="Почта:"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Margin="15"/>
+            <TextBox x:Name="EmailField"
+                     Grid.Column="1"
+                     Grid.Row="3"
+                     VerticalAlignment="Center"
+                     FontSize="20"
+                     TextWrapping="WrapWithOverflow"
+                     Margin="15"/>
+
+        </Grid>
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                    HorizontalAlignment="Center"
+                    Margin="5">
+            <Button Padding="30, 5"
+                    FontSize="20"
+                    Content="Изменить"
+                    Background="#9CC3C2"
+                    Click="Button_Click_1"/>
+            <Button Padding="30, 5"
+                    FontSize="20"
+                    Content="Отменить"
+                    Margin="10, 0, 0, 0"
+                    Background="#9CC3C2"
+                    Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

@@ -1,0 +1,395 @@
+﻿<Page x:Class="WpfApp1.Pages.ChangeCleaningPlace"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp1.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ChangeCleaningPlace">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="5px"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock FontSize="25"
+                   FontWeight="Bold"
+                   Text="Изменение заказа"
+                   Grid.ColumnSpan="3"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+
+        <Rectangle Grid.Column="1"
+                   Grid.Row="1"
+                   Fill="#9CC3C2"
+                   Stretch="Fill"/>
+
+        <Grid Grid.Column="0"
+              Grid.Row="1"
+              Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Column="0"
+                       Grid.Row="0"
+                       Text="Город:"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            <TextBox x:Name="TownField"
+                     Grid.Column="1"
+                     Grid.Row="0"
+                     VerticalAlignment="Center"
+                     FontSize="20"
+                     TextWrapping="WrapWithOverflow"/>
+
+            <TextBlock Grid.Column="0"
+                       Grid.Row="1"
+                       Text="Адрес:"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            <TextBox x:Name="AdressField"
+                     Grid.Column="1"
+                     Grid.Row="1"
+                     VerticalAlignment="Center"
+                     FontSize="20"
+                     TextWrapping="WrapWithOverflow"/>
+
+            <TextBlock Grid.Column="0"
+                       Grid.Row="2"
+                       Text="Индекс:"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            <TextBox x:Name="IndexField"
+                     Grid.Column="1"
+                     Grid.Row="2"
+                     VerticalAlignment="Center"
+                     FontSize="20"
+                     TextWrapping="WrapWithOverflow"/>
+
+            <TextBlock Grid.Column="0"
+                       Grid.Row="3"
+                       Text="Сумма с клиента:"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       TextWrapping="WrapWithOverflow"/>
+            <Grid Grid.Column="1"
+                  Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="30"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBox x:Name="PFCField"
+                         Grid.Column="0"
+                         VerticalAlignment="Center"
+                         FontSize="20"
+                         TextWrapping="WrapWithOverflow"
+                         PreviewTextInput="PFCField_PreviewTextInput"/>
+                <TextBlock Grid.Column="1"
+                           Text="€"
+                           FontSize="30"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+            </Grid>
+
+            <TextBlock Grid.Column="0"
+                       Grid.Row="5"
+                       Text="Начало работы:"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       TextWrapping="WrapWithOverflow"/>
+            <Grid Grid.Column="1"
+                  Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <DatePicker Grid.Column="0"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            BorderThickness="0"
+                            Margin="10, 0"
+                            Name="BeginDate"/>
+                <TextBox Grid.Column="1"
+                         VerticalAlignment="Center"
+                         FontSize="20"
+                         Margin="10, 0"
+                         Name="BeginHour"
+                         PreviewTextInput="Hour_PreviewTextInput"/>
+                <TextBlock Text=":"
+                           Grid.Column="2"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           HorizontalAlignment="Center"/>
+                <TextBox Grid.Column="3"
+                         VerticalAlignment="Center"
+                         FontSize="20"
+                         Margin="10, 0"
+                         Name="BeginMinute"
+                         PreviewTextInput="Minute_PreviewTextInput"/>
+            </Grid>
+            <TextBlock Grid.Column="0"
+                       Grid.Row="6"
+                       Text="Конец работ:"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       TextWrapping="WrapWithOverflow"/>
+            <Grid Grid.Column="1"
+                  Grid.Row="6">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <DatePicker Grid.Column="0"
+                            VerticalAlignment="Center"
+                            FontSize="20"
+                            BorderThickness="0"
+                            Margin="10, 0"
+                            Name="EndDate"/>
+                <TextBox Grid.Column="1"
+                         VerticalAlignment="Center"
+                         FontSize="20"
+                         Margin="10, 0"
+                         Name="EndHour"
+                         PreviewTextInput="Hour_PreviewTextInput"/>
+                <TextBlock Text=":"
+                           Grid.Column="2"
+                           VerticalAlignment="Center"
+                           FontSize="20"
+                           HorizontalAlignment="Center"/>
+                <TextBox Grid.Column="3"
+                         VerticalAlignment="Center"
+                         FontSize="20"
+                         Margin="10, 0"
+                         Name="EndMinute"
+                         PreviewTextInput="Minute_PreviewTextInput"/>
+            </Grid>
+
+            <TextBlock Grid.Column="0"
+                       Grid.Row="8"
+                       Text="Повторять:"
+                       FontSize="20"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       TextWrapping="WrapWithOverflow"/>
+            
+            <Grid Grid.Column="1"
+                  Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBox x:Name="RepeatValue"
+                         Grid.Column="0"
+                         VerticalAlignment="Center"
+                         FontSize="20"
+                         Margin="5"
+                         TextWrapping="WrapWithOverflow"
+                         PreviewTextInput="PFCField_PreviewTextInput"/>
+                <ComboBox Grid.Column="1"
+                          VerticalAlignment="Center"
+                          Margin="5"
+                          Name="RepeatUnit"
+                          FontSize="20"
+                          SelectionChanged="RepeatUnit_Selected"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="2"
+              Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="5px"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Rectangle Grid.Row="1"
+                   Fill="#9CC3C2"
+                   Stretch="Fill"/>
+
+            <Grid Margin="15">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           FontSize="20"
+                           Text="Клиент:"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+
+                <ScrollViewer Grid.Column="1"
+                              VerticalScrollBarVisibility="Hidden"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="5"
+                                Name="ClientsContainer"
+                                VerticalAlignment="Center"/>
+                </ScrollViewer>
+                
+                <Button Grid.Column="2"
+                        VerticalAlignment="Center"
+                        Padding="5"
+                        Background="#9CC3C2"
+                        Click="Button_Click_2">
+                    <TextBlock FontSize="20"
+                               Text="Новый клиент"
+                               TextWrapping="WrapWithOverflow"/>
+                </Button>
+            </Grid>
+
+            <Grid Margin="15"
+                  Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           FontSize="20"
+                           Text="Назначить сотрудника:"
+                           VerticalAlignment="Center"
+                           HorizontalAlignment="Center"
+                           TextWrapping="WrapWithOverflow"/>
+
+                <ScrollViewer Grid.Column="1"
+                              VerticalScrollBarVisibility="Hidden"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="5"
+                                Name="EmployeeContainer"
+                                VerticalAlignment="Center"/>
+                </ScrollViewer>
+
+                <Grid Grid.Column="3"
+                      VerticalAlignment="Center"
+                      Name="EmployeeInfo"
+                      Visibility="Hidden">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0"
+                                   Grid.ColumnSpan="2"
+                                   Text="Время на дорогу:"
+                                   FontSize="20"
+                                   TextAlignment="Center"
+                                   TextWrapping="WrapWithOverflow"/>
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="0"
+                                 FontSize="20"
+                                 Margin="5"
+                                 Name="WayValue"
+                                 VerticalAlignment="Center"
+                                 PreviewTextInput="PFCField_PreviewTextInput"/>
+                        <ComboBox Name="WayUnit"
+                                  Grid.Column="1"
+                                  Grid.Row="1"
+                                  Margin="5"
+                                  FontSize="20"
+                                  VerticalAlignment="Center"
+                                  SelectionChanged="WayUnit_Selected"/>
+                    </Grid>
+
+                    <Grid Grid.Row="1"
+                          Margin="0, 15, 0, 0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="25"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock Grid.Row="0"
+                                   Grid.ColumnSpan="2"
+                                   Text="Ставка сотрудника:"
+                                   FontSize="20"
+                                   TextAlignment="Center"
+                                   TextWrapping="WrapWithOverflow"/>
+                        <TextBox Grid.Row="1"
+                                 Grid.Column="0"
+                                 FontSize="20"
+                                 Margin="5"
+                                 Name="EmployeeMoney"
+                                 VerticalAlignment="Center"
+                                 PreviewTextInput="PFCField_PreviewTextInput"/>
+                        <TextBlock Grid.Column="1"
+                                   Grid.Row="1"
+                                   Text="€"
+                                   FontSize="20"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <StackPanel Orientation="Horizontal"
+                    Grid.Row="2"
+                    Grid.ColumnSpan="3"
+                    HorizontalAlignment="Center"
+                    Margin="5">
+            <Button Padding="30, 5"
+                    FontSize="20"
+                    Content="Изменить"
+                    Background="#9CC3C2"
+                    Click="Button_Click_1"/>
+            <Button Padding="30, 5"
+                    FontSize="20"
+                    Content="Отменить"
+                    Margin="10, 0, 0, 0"
+                    Background="#9CC3C2"
+                    Click="Button_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>

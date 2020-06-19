@@ -1,0 +1,55 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Data.SQLite" Version="1.0.113.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\ChangeClient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\ChangeCleaningPlace.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Pages\ChooseClient.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserForm\CleaningPlaceCell.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserForm\EmployeeCell.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\ChangeClient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\ChangeCleaningPlace.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Pages\ChooseClient.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserForm\CleaningPlaceCell.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserForm\EmployeeCell.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

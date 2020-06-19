@@ -1,0 +1,98 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        WindowStartupLocation="CenterScreen" WindowState="Maximized"
+        MinHeight="480" MinWidth="720"
+        Background="#F0ECE9">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="42.5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Menu VerticalAlignment="Top"
+              Grid.Row="0"
+              Background="#EFDCCD">
+            <MenuItem Header="Календарь"
+                      FontSize="15"
+                      Padding="10"
+                      Click="MenuItem_Click"/>
+            
+            <MenuItem Header="Заказы"
+                      FontSize="15"
+                      Padding="10">
+                <MenuItem Header="Полный отчет"
+                      FontSize="12"
+                      Padding="5"/>
+                <MenuItem Header="Отчет по клиенту"
+                      FontSize="12"
+                      Padding="5"/>
+                <MenuItem Header="Отчет за промежуток времени"
+                      FontSize="12"
+                      Padding="5"/>
+                
+                <Separator/>
+
+                <MenuItem Header="Добавить заказ"
+                      FontSize="12"
+                      Padding="5"
+                          Click="MenuItem_Click_1"/>
+                <MenuItem Header="Изменить / Удалить"
+                      FontSize="12"
+                      Padding="5">
+                    <MenuItem Header="Заказ"
+                      FontSize="12"
+                      Padding="5"
+                              Click="MenuItem_Click_2"/>
+                    <MenuItem Header="Клиент"
+                      FontSize="12"
+                      Padding="5"
+                              Click="MenuItem_Click_3"/>
+                </MenuItem>
+            </MenuItem>
+
+            <MenuItem Header="Сотрудники"
+                      FontSize="15"
+                      Padding="10">
+                <MenuItem Header="Назначить на заказ"
+                      FontSize="12"
+                      Padding="5"/>
+
+                <Separator/>
+
+                <MenuItem Header="Полный отчет"
+                      FontSize="12"
+                      Padding="5"/>
+                <MenuItem Header="Отчет по сотруднику"
+                      FontSize="12"
+                      Padding="5"/>
+                <MenuItem Header="Отчет за промежуток времени"
+                      FontSize="12"
+                      Padding="5"/>
+
+                <Separator/>
+
+                <MenuItem Header="Добавить сотрудника"
+                      FontSize="12"
+                      Padding="5"/>
+                <MenuItem Header="Изменить инфорацию о сотруднике"
+                      FontSize="12"
+                      Padding="5"/>
+                <MenuItem Header="Удалить сотрудника"
+                      FontSize="12"
+                      Padding="5"/>
+            </MenuItem>
+        </Menu>
+
+        <Frame NavigationUIVisibility="Hidden"
+               x:Name="Content"
+               Grid.Row="1"
+               Padding="15, 10, 15, 15"/>
+    </Grid>
+</Window>

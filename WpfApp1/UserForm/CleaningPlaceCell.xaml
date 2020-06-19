@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="WpfApp1.UserForm.CleaningPlaceCell"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.UserForm"
+             mc:Ignorable="d" 
+             d:DesignWidth="800" d:DesignHeight="450">
+    <Border Background="#EFDCCD"
+            BorderBrush="#9CC3C2"
+            BorderThickness="3"
+            CornerRadius="10"
+            Name="MainBorder"
+            MouseLeftButtonDown="MainBorder_MouseLeftButtonDown"
+            MouseRightButtonDown="MainBorder_MouseRightButtonDown">
+        <Grid Margin="15">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0"
+                       FontSize="20"
+                       Margin="15, 5"
+                       Name="Addres"
+                       VerticalAlignment="Center"
+                       TextWrapping="WrapWithOverflow"/>
+            <Grid Grid.Row="1"
+                  Margin="0, 5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0"
+                           FontSize="15"
+                           Margin="15, 0"
+                           Name="Town"
+                           VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="1"
+                           FontSize="15"
+                           Margin="15, 0"
+                           Name="Time"
+                           VerticalAlignment="Center"/>
+                <TextBlock Grid.Column="2"
+                           FontSize="15"
+                           Margin="15, 0"
+                           Name="Client"
+                           VerticalAlignment="Center"/>
+            </Grid>
+        </Grid>
+    </Border>
+</UserControl>
